@@ -1,0 +1,16 @@
+<section>
+    <h3>Sign Up</h3>
+    <form [formGroup]="signUpForm" (submit)="onSignUpSubmit()">
+        <div class="">
+            <label for="email">Email</label><br>
+            <input type="text" placeholder="Email" id="email" formControlName="email" />
+        </div>
+        <div class="">
+            <label for="">Password</label><br>
+            <input type="password" placeholder="Password" id="password" formControlName="password" />
+        </div>
+        <div>
+            <button type="submit">Sign Up</button>
+        </div>
+    </form>
+</section>

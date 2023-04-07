@@ -1,0 +1,29 @@
+<h3 class="head_title">Post Lists <span>
+        <button [routerLink]="['add']" type="button" class="btn btn-light">Add New Post</button>
+    </span>
+</h3>
+<table *ngIf="posts$ | async as postData" class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of postData">
+            <td>{{item.id}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.description}}</td>
+            <td class="d-flex">
+                <button [routerLink]="['edit', item.id]">Edit</button>
+                <button (click)="onDeletePost(item?.id)">Delete</button>
+                <button [routerLink]="['details', item.id]">View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+
+<router-outlet></router-outlet>

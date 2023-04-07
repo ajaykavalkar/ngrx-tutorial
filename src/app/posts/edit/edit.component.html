@@ -1,0 +1,16 @@
+<h3>Edit Post</h3>
+<form [formGroup]="editPostForm" (submit)="onEditPost()">
+    <div>
+        <label for="title">Title:</label><br>
+        <input type="text" placeholder="Title" id="title" formControlName="title" />
+    </div>
+    <div>
+        <label for="description">Description:</label><br>
+        <textarea type="text" placeholder="Description" id="description" rows="3"
+            formControlName="description"></textarea>
+    </div>
+    <div><button type="submit" [disabled]="editPostForm.invalid">
+            Edit post
+        </button>
+    </div>
+</form>

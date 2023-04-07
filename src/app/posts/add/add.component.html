@@ -1,0 +1,13 @@
+<h3>Add Post</h3>
+<form [formGroup]="postForm" (submit)="onAddPost()">
+    <div>
+        <label for="title">Title:</label><br>
+        <input type="text" placeholder="Title" id="title" formControlName="title" />
+    </div>
+    <div>
+        <label for="description">Description:</label><br>
+        <textarea type="text" placeholder="Description" id="description" rows="3"
+            formControlName="description"></textarea>
+    </div>
+    <div><button type="submit" [disabled]="postForm.invalid">add post</button></div>
+</form>
